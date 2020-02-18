@@ -4,7 +4,11 @@
   "description": "# History",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev --prefix api"
+    "dev": "npm run dev --prefix api",
+    "up": "mkdir -p data && docker-compose up -d",
+    "postup": "npm run dev",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down"
   },
   "keywords": [],
   "author": "",
