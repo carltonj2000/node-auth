@@ -1,19 +1,44 @@
 # Authentication
 
-# History
+## History
 
 The code in this repository is based on the following video series.
 
 - [Authentication in Node.js - #1 Intro](https://www.youtube.com/watch?v=kmAzuH2Lzug&list=PLcCp4mjO-z9_HmJ5rSonmiEGfP-kyRMlI)
 
-# Commands
+## Mongo Commands
 
-tbd
+- `db.users.find({}).pretty()`
+- `db.users.deleteMany({})`
 
-# Setup API
+## Redis Commands
+
+- `scan 0`
+- `ttl <id>`
+- `del <id>`
+
+## Setup API
 
 - npm init -y; npm i --save express
 - npm i -D typescript @types/node @types/express
 - npx tsc --init
 
-# Setup Web
+## Setup Web
+
+## Video Notes
+
+### Video 4
+
+```sh
+curl -v -X POST localhost:3000/register \
+ -H 'Content-Type: application/json' \
+ -d '{"email": "carlton.joseph@gmail.com", "name": "Carlton", "password": "password", "passwordConfirmation": "password" }'
+```
+
+Test if the register route is accessible twice.
+
+```sh
+curl -v -X POST localhost:3000/register \
+ -H 'Content-Type: application/json' \
+ --cookie <cookieId>
+```

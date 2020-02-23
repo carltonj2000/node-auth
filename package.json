@@ -8,7 +8,9 @@
     "up": "mkdir -p data && docker-compose up -d",
     "postup": "npm run dev",
     "stop": "docker-compose stop",
-    "down": "docker-compose down"
+    "down": "docker-compose down",
+    "mongo:cli": "docker exec -it node-auth_db_1 mongo -u admin -p secret auth",
+    "redis:cli": "docker exec -it node-auth_cache_1 redis-cli -a secret"
   },
   "keywords": [],
   "author": "",
