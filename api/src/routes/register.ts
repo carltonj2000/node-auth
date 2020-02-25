@@ -1,4 +1,4 @@
-import { Router, NextFunction } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 
 import { registerSchema, validate } from "../validation";
 import { User } from "../models";

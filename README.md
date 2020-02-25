@@ -32,7 +32,7 @@ The code in this repository is based on the following video series.
 ```sh
 curl -v -X POST localhost:3000/register \
  -H 'Content-Type: application/json' \
- -d '{"email": "carlton.joseph@gmail.com", "name": "Carlton", "password": "password", "passwordConfirmation": "password" }'
+ -d '{"email": "carlton.joseph@gmail.com", "name": "Carlton", "password": "passW0rd", "passwordConfirmation": "passW0rd" }'
 ```
 
 Test if the register route is accessible twice.
