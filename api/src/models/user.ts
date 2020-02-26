@@ -1,5 +1,5 @@
 import { Schema, model, Document } from "mongoose";
-import { hash } from "bcryptjs";
+import { hash, compare } from "bcryptjs";
 
 import { BCRYPT_WORK_FACTOR } from "../config";
 
@@ -7,6 +7,7 @@ interface UserDocument extends Document {
   email: string;
   name: string;
   password: string;
+  matchesPassword: (password: string) => Promise<boolean>;
 }
 
 const userSchema = new Schema(
@@ -25,5 +26,9 @@ userSchema.pre<UserDocument>("save", async function() {
     this.password = await hash(this.password, BCRYPT_WORK_FACTOR);
   }
 });
+
+userSchema.methods.matchesPassword = function(password: string) {
+  return compare(password, this.password);
+};
 
 export const User = model<UserDocument>("User", userSchema);

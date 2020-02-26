@@ -4,7 +4,7 @@ import { registerSchema, validate } from "../validation";
 import { User } from "../models";
 import { logIn } from "../auth";
 import { guest, catchAsync } from "../middleware";
-import logger from "../config/winston";
+import logger from "../logger";
 import { BadRequest } from "../errors";
 const router = Router();
 
@@ -23,7 +23,7 @@ router.post(
 
     logIn(req, user.id);
 
-    res.json({ msg: "ok" });
+    res.json({ message: "OK" });
   })
 );
 
