@@ -27,13 +27,19 @@ The code in this repository is based on the following video series.
 
 ## Video Notes
 
+### Video 8 - Protected Fields
+
+````sh
+curl -v -X GET localhost:3000/home -H 'Content-Type: application/json' \
+  --cookie ''
+
 ### Video 7 - Login & Logout
 
 ```sh
 curl -v -X POST localhost:3000/login \
  -H 'Content-Type: application/json' \
  -d '{"email": "carlton.joseph@gmail.com", "password": "passW0rd"}'
-```
+````
 
 ```sh
 curl -v -X POST localhost:3000/logout -H 'Content-Type: application/json' \
